@@ -53,7 +53,7 @@ public class Caja_Registradora extends JFrame {
         table1.getTableHeader().setBackground(new Color(240, 240, 240));
         table1.getTableHeader().setForeground(Color.DARK_GRAY);
 
-        Color botonColor = new Color(30, 80, 140);
+        Color botonColor = Color.BLUE;
         JButton[] botones = {agregarButton, guardarCobrarButton, cancelarButton, logoutButton, validarClienteButton};
         for (JButton btn : botones) {
             btn.setFocusPainted(false);

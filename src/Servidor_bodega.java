@@ -32,7 +32,7 @@ public class Servidor_bodega extends JFrame {
         setVisible(true);
 
         // ===== ESTÉTICA =====
-        Color botonColor = new Color(30, 80, 140); // azul oscuro
+        Color botonColor = Color.BLUE; // azul oscuro
         JButton[] botones = {registrarProductoButton, actualizarProductoButton, eliminarProductoButton, refrescarTablaButton, logoutButton};
         for (JButton btn : botones) {
             btn.setFocusPainted(false);
