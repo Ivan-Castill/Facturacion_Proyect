@@ -15,54 +15,37 @@ Este proyecto es un sistema de facturación desarrollado en **Java** con interfa
 
 ---
 
-## Estructura de la Base de Datos
 
-**Base de datos:** `facturacion_db`
+## Tecnologías
+- **Java 8+** (Swing para la interfaz gráfica)
+- **MySQL** (gestión de la base de datos)
+- **Gson** (para exportar facturas a JSON)
+- **JDBC** (para la conexión entre Java y MySQL)
 
-### Tabla: clientes
-- `id_cliente` (INT, PK, AUTO_INCREMENT)
-- `cedula` (VARCHAR(15), UNIQUE)
-- `nombres` (VARCHAR(100))
-- `apellidos` (VARCHAR(100))
-- `direccion` (VARCHAR(200))
-- `telefono` (VARCHAR(20))
-- `email` (VARCHAR(100))  
-Permite registrar y consultar la información básica de los clientes.
+## Funcionalidades principales
 
-### Tabla: productos
-- `id_producto` (INT, PK, AUTO_INCREMENT)
-- `codigo` (VARCHAR(20), UNIQUE)
-- `nombre` (VARCHAR(100))
-- `descripcion` (TEXT)
-- `precio` (DECIMAL(10,2))
-- `stock` (INT)  
-Contiene los datos de cada producto, incluyendo su precio y el inventario disponible.
+### 1. Login
+- Validación de usuarios mediante credenciales.
+- Determinación automática del rol (cajero, administrador, servidor de bodega).
+- Seguridad en el acceso a la información.
 
-### Tabla: facturas
-- `id_factura` (INT, PK, AUTO_INCREMENT)
-- `numero_factura` (VARCHAR(20), UNIQUE)
-- `fecha` (DATETIME)
-- `id_cliente` (INT, FK → clientes.id_cliente)
-- `total` (DECIMAL(10,2))  
-Representa la cabecera de cada factura.
+### 2. Caja Registradora
+- Registro y validación de clientes.
+- Selección de productos mediante ID y cantidad.
+- Cálculo automático de subtotal, IVA y total general.
+- Guardado de facturas en la base de datos y en formato JSON.
+- Interfaz intuitiva y rápida para ventas diarias.
 
-### Tabla: detalle_factura
-- `id_detalle` (INT, PK, AUTO_INCREMENT)
-- `id_factura` (INT, FK → facturas.id_factura)
-- `id_producto` (INT, FK → productos.id_producto)
-- `cantidad` (INT)
-- `precio_unitario` (DECIMAL(10,2))
-- `subtotal` (DECIMAL(10,2))  
-Registra los productos incluidos en cada factura.
+### 3. Servidor Bodega
+- Registro, actualización y eliminación de productos.
+- Visualización del inventario en tiempo real mediante tabla.
+- Botón para refrescar datos y mantener la información siempre actualizada.
 
-### Tabla: usuarios
-- `id_usuario` (INT, PK, AUTO_INCREMENT)
-- `usuario` (VARCHAR(50), UNIQUE)
-- `clave` (VARCHAR(255))
-- `rol` (ENUM('admin','empleado'))  
-Maneja los accesos y define roles de usuario.
-
----
+### 4. Administrador
+- Gestión completa de usuarios y roles.
+- Revisión de historiales y generación de reportes.
+- Control integral del sistema y supervisión de todas las operaciones.
+- Cierre de sesión seguro para mantener la integridad de los datos.
 
 ## Dependencias
 
