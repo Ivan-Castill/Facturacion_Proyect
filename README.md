@@ -14,7 +14,13 @@ Este proyecto es un sistema de facturación desarrollado en **Java** con interfa
 - Conexión en **LAN** para trabajar de manera remota entre varias computadoras en la misma red local.
 
 ---
+## Estructura de la Base de Datos
 
+**Base de datos:** `facturacion_db`
+
+[![Screenshot-2025-08-18-173638.png](https://i.postimg.cc/VLwj5qHC/Screenshot-2025-08-18-173638.png)](https://postimg.cc/HjSJhymY)
+
+---
 
 ## Tecnologías
 - **Java 8+** (Swing para la interfaz gráfica)
